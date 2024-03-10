@@ -5,8 +5,9 @@
     display: flex;
     flex-direction: column;
     color: #fff;
-    margin-top: 100px;
-    padding-top: 40px;
+    margin-top: 20px;
+    padding-top: 140px;
+    position: relative;
 
     
 
@@ -17,6 +18,7 @@
     flex-direction: column;
     height: 75vh;  
     justify-content: space-between; 
+
 }
 .hero-top{
     display: flex;
@@ -24,9 +26,51 @@
     font-size: 110px;
     line-height: 110px;
     font-family: "Italiana", sans-serif;
+    position: relative;
+    /* background-color: red; */
     
    
 }
+.hero-2{
+    
+    
+    color: yellow;
+    left: 70%;
+    transform: translateX(-10%);
+    font-size: 20px;
+    top: 65%;
+    position: absolute;
+    animation: hero-2 500ms 1.5s forwards;
+    opacity: 0;
+
+    width: max-content;
+    h1{
+        /* opacity: 0; */
+        font-family: "Italiana",sans-serif;
+        /* animation: react   1000ms  infinite; */
+    }
+   
+}
+@keyframes hero-2 {
+    to{
+        opacity: 0.15;
+    }
+    
+}
+@keyframes react {
+    from{
+        opacity: 0;
+        
+    }
+   
+   to{
+    
+    opacity: 1;
+   }
+   
+    
+}
+
 
 .web{
     animation: web 600ms 400ms forwards;
@@ -126,12 +170,23 @@
         height: 60vh;
         width: 90%;
         margin-top: 30px;
-        padding-top: 10px;
+        padding-top: 80px;
+    }
+    .hero-2{
+        left: 72%;
+        top: 36%;
+        transform: translateX(-60%);
+     
+        width: max-content;
+    }
+    .react{
+        font-size: 29px;
     }
     .hero-bottom{
         width: 100%;
         /* background-color: red; */
     }
+   
     .hero-bottom-text{
         font-size: 13px;
     }

@@ -10,14 +10,16 @@ function Header() {
       </div>
       <div className="sec-header">
         <div className="nav-div">
-          <span>Home</span>
+          <a href="#hero" className="about-span">
+            <span>Home</span>
+          </a>
           <a className="about-span" href="#about">
             <span>About</span>
           </a>
-          <a href="#projects">
+          <a className="about-span" href="#projects">
             <span>Projects</span>
           </a>
-          <a href="#contact">
+          <a className="about-span" href="#contact">
             <span>Contact</span>
           </a>
         </div>

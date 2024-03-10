@@ -1,8 +1,32 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./hero.css";
 function Hero() {
+  const tech = [
+    "ReactJs",
+    "Redux",
+    "SQL",
+    "Spring Boot",
+    "MongoDb",
+    "Express JS",
+    "Node Js",
+    "Javascript",
+    "Responsive Design",
+  ];
+  const [showTech, setTech] = useState(null);
+  const [idx, setIdx] = useState(0);
+  useEffect(() => {
+    if (idx == tech.length) {
+      setIdx(0);
+    }
+    const clear = setInterval(() => {
+      setIdx((pre) => pre + 1);
+      setTech(tech[idx]);
+    }, 1000);
+    return () => clearInterval(clear);
+  }, [idx]);
+  console.log(showTech);
   return (
-    <div className="hero">
+    <div id="hero" className="hero">
       <div className="hero-1">
         <div className="hero-top">
           <span className="hero-text web">Web</span>
@@ -22,7 +46,10 @@ function Hero() {
           </span>
         </div>
       </div>
-      <div className="hero-2"></div>
+
+      <div className="hero-2">
+        <h1 className="react">({showTech})</h1>
+      </div>
     </div>
   );
 }

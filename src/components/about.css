@@ -15,9 +15,12 @@
 .get{
     align-self:flex-start;
     font-size: 130px;
-    font-weight: 500;
-    font-style: italic;
+    font-weight: 350;
+    letter-spacing: 1px;
+    color: rgb(227, 227, 227);
+    /* font-style: italic; */
     font-family: "Italiana", sans-serif;
+    /* font-family: "Istwok web",sans-serif; */
     margin-bottom: 20px;
 }
 
@@ -65,7 +68,7 @@
     font-size: 20px;
     font-family: "Istwok web ",sans-serif;
     font-weight: 500;
-    color: #fff;
+    color: yellow;
     opacity: .9;
     min-width: 20%;
     align-self: start;
@@ -216,9 +219,9 @@
     align-items: center;
     button{
         background: #000;
-        color: white;
-        border: none;
-        padding: 12px 25px;
+        color: #fff;
+      
+        padding: 10px 20px;
         border-radius: 30px;
         cursor: pointer;
     }

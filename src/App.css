@@ -8,5 +8,6 @@
 .App{
   position: relative;
   /* background-color: red; */
-  padding-bottom: 10px;
+  padding-bottom: 25px;
+  /* cursor: none; */
 }

@@ -41,12 +41,12 @@
     
 }
 .pro-btn{
-    background-color: white;
+    background-color: black;
     width: 140px;
     border: none;
     border-radius: 25px;
     font-weight: 800;
-    color: rgb(80, 80, 80);
+    color:#fff;
     cursor: pointer;
     padding:  13px 20px ;
     font-weight: 700;
@@ -68,14 +68,19 @@
     width: 100%;
     height: 65vh;
     display: flex;
-    gap: 5%;
+    gap: 2%;
+    overflow-x: scroll;
     align-items: flex-start;
-    justify-content: flex-end;
+    justify-content: flex-start;
     /* background-color: rebeccapurple; */
     
     img{
         height: 100%;
+        
     }
+}
+.img-div-mob::-webkit-scrollbar{
+    display: none;
 }
 .pro1des{
     display: flex;
@@ -94,12 +99,13 @@
 .tech-used{
     display: flex;
     flex-direction: column;
-    gap: 8px;
+    gap: 20px;
    justify-content: flex-start;
    
     h1{
-        font-size: 34px;
-        letter-spacing: 1px;
+        font-size: 54px;
+        line-height: 50px;
+        letter-spacing: 2px;
         font-family: "Italiana", sans-serif;   
     }
     p{
@@ -109,10 +115,11 @@
     }
 }
 .pro-btn:hover{
-    background-color: black;
-    color: #fff;
+
+    color: yellow;
     
 }
+
 
 
 @media (max-width:600px) {
@@ -121,21 +128,27 @@
         width: 90%;
         padding-top: 55px;
         margin-top: 0;
+        /* background-color: white; */
     }
     .pro1{
         flex-direction: column-reverse;
         /* background-color: red; */
         height: max-content;
+        gap:10px;
         /* padding: 10px; */
+        /* background-color: blue; */
         
     }
     .pro1-wrap{
         padding: 20px;
+        /* gap: 10px; */
+     
+        flex-direction: column-reverse;
     }
     .pro-btns{
         flex-direction: row;
         align-self: flex-start;
-        margin-top: 2px;
+        margin-bottom: 10px;
         /* background-color: red; */
         width: 100%;
         /* justify-content: center; */
@@ -147,9 +160,17 @@
         font-size: 17px;
     }
     .img-div{
-        width: 100%;
+        width: 100%;    
         height: fit-content;
         /* background-color: red; */
+        img{
+        height: 180px;
+        }
+    }
+    .pro1des{
+    margin-bottom: -30px;
+    /* margin-top: 10px; */
+    /* gap: 10px; */
     }
     .pro-img{
         width: 100%;
@@ -158,18 +179,22 @@
    .img-div-mob{
     justify-content: flex-start;
     overflow-x: scroll;
-    gap: 30px;
-    padding: 20px;
+    gap: 10px;
+    padding: 20px 0;
+    img{
+        height: 100%;
+    }
    }
    .tech-used{
     flex-direction: column;
     align-items: flex-start;
-    gap: 6px;
+
     p{
         opacity: .7;
-       
+        margin-top: -10px; 
     }
 
    }
+   
     
 }

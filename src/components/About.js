@@ -1,7 +1,14 @@
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import "./about.css";
+import AOS from "aos";
+import "aos/dist/aos.css";
 function About() {
+  const aboutRef = useRef(null);
   const [skill, setSkill] = useState(false);
+  useEffect(() => {
+    AOS.init();
+  }, []);
+
   const html = 90;
   const css = 97;
   const js = 96;
@@ -102,9 +109,11 @@ function About() {
   };
   return (
     <div id="about" className="about">
-      <h1 className="get">About</h1>
+      <h1 data-aos="fade" data-aos-duration="600" className="get">
+        About
+      </h1>
       <div className="about-wrapper">
-        <div className="about-1">
+        <div data-aos="fade" data-aos-delay="300" className="about-1">
           <h3 className="bio-text">Bio</h3>
           <p className="bio-info">
             Hello there! 👋 I'm Yaseen , a passionate and dedicated Full Stack
@@ -114,7 +123,12 @@ function About() {
             of the development process.
           </p>
         </div>
-        <div className="about-2">
+        <div
+          data-aos="fade"
+          data-aos-duration="300"
+          data-aos-delay="200"
+          className="about-2"
+        >
           <h3 className="bio-text">Education</h3>
           <div className="degree">
             <div className="degree-1">
@@ -132,16 +146,21 @@ function About() {
               <p className="course">
                 Bachelors in computer Science(2020-2023){" "}
               </p>
-              <p style={{ fontSize: "12px" }}>GPA:7.62</p>
+              <p style={{ fontSize: "12px" }}>CGPA:7.62</p>
             </div>
             <div className="degree-1">
               <h3 className="clgname">Siddhartha Junoir College</h3>
               <p className="course">PCM(2018-2020) </p>
-              <p style={{ fontSize: "12px" }}>70%</p>
+              <p style={{ fontSize: "12px" }}>70.1%</p>
             </div>
           </div>
         </div>
-        <div className="about-3">
+        <div
+          data-aos="fade"
+          data-aos-duration="300"
+          data-aos-delay="200"
+          className="about-3"
+        >
           <h3 className="bio-text">Skills</h3>
           <div className="skill">
             <p className="bio-info">

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 import "./main.css";
 import Header from "./Header";
 import Hero from "./Hero";
