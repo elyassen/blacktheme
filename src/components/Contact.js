@@ -3,10 +3,9 @@ import "./contact.css";
 import {
   ArrowRightOutlined,
   CheckCircleFilled,
-  CheckOutlined,
   CloseCircleFilled,
-  CrownFilled,
 } from "@ant-design/icons";
+import { BASE_URL } from "../utils";
 function Contact() {
   const [user, setuser] = useState({ name: "", email: "", project: "" });
   const [saved, setSaved] = useState(false);
@@ -27,7 +26,7 @@ function Contact() {
       }, 2000);
     } else {
       try {
-        const req = await fetch("http://localhost:9090/client", {
+        const req = await fetch(`${BASE_URL}/client`, {
           method: "POST",
           headers: {
             "content-type": "application/json",
