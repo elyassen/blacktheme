@@ -2,6 +2,13 @@ import React, { useEffect, useRef, useState } from "react";
 import "./about.css";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import {
+  ArrowDownOutlined,
+  ArrowLeftOutlined,
+  ArrowRightOutlined,
+  CloseCircleFilled,
+  CloseOutlined,
+} from "@ant-design/icons";
 function About() {
   const aboutRef = useRef(null);
   const [skill, setSkill] = useState(false);
@@ -177,6 +184,7 @@ function About() {
             </p>
             <button onClick={() => setSkill(true)} className="explore">
               Explore Skillset
+              <ArrowRightOutlined className="arrow" />
             </button>
           </div>
         </div>
@@ -185,8 +193,10 @@ function About() {
         <div className="skillset">
           <div className="exp-top">
             {" "}
-            <h2 className="exp">Expertise</h2>
-            <button onClick={() => setSkill(false)}>Close</button>
+            {/* <h2 className="exp">Expertise</h2> */}
+            <button onClick={() => setSkill(false)}>
+              <CloseOutlined className="close" />
+            </button>
           </div>
 
           <div className="skill-wrapper">

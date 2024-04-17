@@ -32,6 +32,25 @@
     height: 65vh;
    
 }
+.live-link{
+    /* background-color: red; */
+    text-decoration: none;
+    color: white;
+    align-self:flex-end;
+    width: max-content;
+    margin-bottom: -10px;
+    border: 1px solid #fff;
+    font-family: "Manrope",sans-serif;
+    padding: 8px 20px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    p{
+        color: white;
+        font-weight: 550;
+    }
+}
 
 .pro-btns{
     display: flex;
@@ -116,7 +135,7 @@
 }
 .pro-btn:hover{
 
-    color: yellow;
+    color: gray;
     
 }
 
@@ -152,12 +171,17 @@
         /* background-color: red; */
         width: 100%;
         /* justify-content: center; */
-        gap:20px;
+        /* gap:20px; */
+        /* background-color: red; */
 
     }
     .pro-btn{
-        width: 35%;
+        width: 45%;
+        gap: 0;
+        justify-content: center;
+        align-items: flex-start;
         font-size: 17px;
+        padding:14px 4px;
     }
     .img-div{
         width: 100%;    

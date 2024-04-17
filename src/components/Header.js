@@ -1,7 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import "./header.css";
+import { ArrowRightOutlined } from "@ant-design/icons";
 
 function Header() {
+  const [quick, setQuick] = useState(false);
+  const quickfun = () => {
+    setQuick(!quick);
+    document.body.classList.toggle("overflow");
+  };
+
   return (
     <div className="header">
       <div className="first-header">
@@ -24,9 +31,44 @@ function Header() {
           </a>
         </div>
       </div>
-      <div className="third-header">
-        <div className="green"></div>
-        <span>Available for work</span>
+      <div onClick={quickfun} className="third-header">
+        <ArrowRightOutlined
+          className="arrow1"
+          id={`${quick ? "white-arrow" : "black-arrow"}`}
+        />
+      </div>
+
+      <div className={`${quick ? "quick-access" : "close-quick"}`}>
+        <div className="quick-access-top">
+          <button>Resume</button>
+        </div>
+
+        <div className="quick-bottom">
+          <div className="available">
+            <h2>Availalble for freelance work</h2>
+            <button>Contact</button>
+          </div>
+          <div className="links">
+            <a
+              target="_blank"
+              href="https://www.linkedin.com/in/yaseen-ahmed-8421351a3/"
+            >
+              @LinkedIn
+            </a>
+            <a href="" target="_blank">
+              @Github
+            </a>
+            <a target="_blank" href="mailto:yaseenseen9@gmail.com">
+              @Github,
+            </a>
+            <a target="_blank" href="https://www.instagram.com/yassenahm3d/">
+              @Instagram.
+            </a>
+          </div>
+        </div>
+        <h3 className="location">
+          Hyderabad,India <span>2024</span>
+        </h3>
       </div>
     </div>
   );

@@ -11,6 +11,7 @@ import pro2 from "../static/pro2.jpg";
 import pro2_2_mob from "../static/pro2_2_mob.png";
 import pro2_b_mob from "../static/pro2_b_mob.png";
 import Aos from "aos";
+import { LinkOutlined } from "@ant-design/icons";
 
 function Projects() {
   const oneImg = [pro1, pro1_2, pro_1_3];
@@ -35,6 +36,14 @@ function Projects() {
     <div id="projects" data-aos="fade-up">
       <h1 className="get ">Projects </h1>
       <div className="pro1-wrap">
+        <a
+          className="live-link"
+          target="_blank"
+          href="https://creative-sunburst-ddcd15.netlify.app/"
+        >
+          <p>Live link</p>
+          <LinkOutlined />
+        </a>
         <div className="pro1" data-aos="fade-up">
           <div className="img-div">
             {desktop1 ? (
@@ -50,10 +59,10 @@ function Projects() {
           </div>
           <div className="pro-btns">
             <button onClick={() => setDesktop1(true)} className="pro-btn">
-              Desktop
+              Desktop view
             </button>
             <button onClick={() => setDesktop1(false)} className="pro-btn">
-              Mobile
+              Mobile view
             </button>
           </div>
         </div>
@@ -62,6 +71,7 @@ function Projects() {
             <h1>Seller's Space</h1>
             <p>React Js,Redux,SQL,Spring boot,Figma</p>
           </div>
+
           <p className="pro-des-para">
             "Seller's Space" is an innovative platform designed to empower users
             to sell a wide range of items through individual accounts.
@@ -71,6 +81,14 @@ function Projects() {
         </div>
       </div>
       <div className="pro1-wrap">
+        <a
+          className="live-link"
+          target="_blank"
+          href="https://idyllic-zabaione-c22796.netlify.app/"
+        >
+          <p>Live link</p>
+          <LinkOutlined />
+        </a>
         <div className="pro1" data-aos="fade-up">
           <div className="img-div">
             {desktop2 ? (
@@ -86,10 +104,10 @@ function Projects() {
           </div>
           <div className="pro-btns">
             <button onClick={() => setDesktop2(true)} className="pro-btn">
-              Desktop
+              Desktop view
             </button>
             <button onClick={() => setDesktop2(false)} className="pro-btn">
-              Mobile
+              Mobile view
             </button>
           </div>
         </div>

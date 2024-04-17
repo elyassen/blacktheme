@@ -25,15 +25,17 @@
 }
 
 .about-wrapper{
-  
+    padding-top: 20px;
+    padding-bottom: 88px;
     border-radius: 10px;
     height: 100%;
     width: 100%;
+    background-color: rgba(47, 47, 47, 0.441);
     
     /* padding: 40px; */
     /* color: #000000; */
 }
-.about-heading{
+.about-heading{ 
     font-family: "Italiana", sans-serif;
     font-size: 120px;
     font-weight: 300; 
@@ -60,25 +62,28 @@
     font-size: 23px;
     font-family: "Italiana", sans-serif;
     font-weight: 700;
-    letter-spacing: 2px;
+    letter-spacing: 1px;
+    /* background-color: red; */
     
 }
 
 .bio-text{
-    font-size: 20px;
-    font-family: "Istwok web ",sans-serif;
-    font-weight: 500;
-    color: yellow;
+    font-size: 28px;
+    font-family:"Istwok web",sans-serif;
+    font-weight: 600;
+    /* color: yellow; */
     opacity: .9;
     min-width: 20%;
     align-self: start;
     /* background-color: red; */
+    margin-bottom: -15px;
 }
 .bio-info{
     font-size: 17px;
     font-family: "Manrope", sans-serif;
     opacity: .6;
-    color: #DAD6CA;
+    color: #dbdbdb;
+    /* margin-bottom: -10px; */
 
 }
 .about-2{
@@ -137,9 +142,11 @@
 
 }
 .explore{
-    padding: 13px 30px;
-    border: 1px solid white;
+    padding: 18px 30px;
+    /* border: 1px solid white; */
+    border: none;
     background-color: #000;
+    background-color: rgb(97, 98, 186);
     color: #fff;
     border-radius: 30px;
     cursor: pointer;
@@ -148,22 +155,35 @@
     font-weight: 400;
     letter-spacing: 2px;
     margin-top: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
     /* font-family: "Istwok web",sans-serif; */
 
 }
 .explore:hover{
-    background-color: white;
-    color: black;
+    /* background-color: white; */
+    /* color: black; */
+    .arrow{
+        transform: rotate(-45deg);
+        /* color: black; */
+        transition: transform 300ms;
+    }
+    
+
 
 }
+
+
+
 .skillset{
-    width: 90vw;
+    width: 88vw;
     height: 0;
     position: fixed;
     bottom: 2%;
     left: 50%;
     transform: translateX(-50%);
-    background-color: #ECE9E1;
     z-index: 2;
     border-radius: 10px;
     color: #000;
@@ -172,10 +192,10 @@
     font-family: "Italiana", sans-serif;
     padding: 20px;
     animation: skillset 200ms  forwards;
+    background-color:rgb(255, 255, 255);
 }
 .skill-level{
     background-color:  #000;
-
     width: 0;
     height: 2.5px;
     animation: levelup 800ms 1s forwards;
@@ -220,12 +240,25 @@
     button{
         background: #000;
         color: #fff;
-      
-        padding: 10px 20px;
+        outline: none;
+        border: none;
+        width: 55px;
+        height: 55px;
+        /* padding: 10px; */
         border-radius: 30px;
         cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-left: auto;
     }
 }
+.close{
+    font-size: 20px;
+    /* color: red; */
+    
+}
+
 .exp{
     font-size: 40px;
     color: #000;
@@ -317,8 +350,22 @@
         gap: 20px;
     }
     .skillset{
-        height: max-content;
-        bottom: 2%;
+        height: 0;
+        bottom: 0;
+        
+        width: 98vw;
+        animation:skillset 300ms ease forwards;
+        border-bottom-right-radius: 0;
+        border-bottom-left-radius: 0;
+    }
+    @keyframes skillset {
+        from{
+            bottom: 0;
+        }
+        to{
+            height: 87vh;
+        }
+        
     }
     .skill-wrapper{
         margin-top: 25px;

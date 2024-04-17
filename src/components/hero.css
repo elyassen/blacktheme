@@ -73,13 +73,13 @@
 
 
 .web{
-    animation: web 600ms 400ms forwards;
+    animation: web 500ms 500ms forwards;
     opacity: 0;
 }
 
 @keyframes web {
     from{
-        transform: translateX(40px);
+        transform: translateX(50px);
     }
     to{
     opacity: 1;
@@ -87,27 +87,69 @@
     
 }
 .dev{
-    animation: dev 600ms 700ms forwards;
+    animation: dev 500ms 800ms forwards;
     opacity: 0;
+    display: flex;
+    align-items: flex-start;
+    gap: 30px;
+    
 }
-
 @keyframes dev {
     from{
-        transform: translateX(40px);
+        transform: translateX(30px);
     }
     to{
     opacity: 1;
     }
     
 }
+@keyframes ital {
+    0%{
+        font-style: italic;
+    
+    }
+    100%{
+        font-style: normal;
+    }
+    
+}
+.tech{
+    height: 10px;
+    font-size: 20px;
+    line-height: 20px;
+    color:yellow;
+    animation: tech 500ms 3s forwards;
+    opacity: 0;
+}
+@keyframes tech{
+    from{
+        transform: translateX(30px);
+    }
+    to{
+        opacity: 1;
+    }
+    
+}
+
+.full{
+    color:rgb(112, 113, 184);
+    font-family: "Manrope",sans-serif !important;
+    font-style: italic;
+    letter-spacing: 1px;
+    font-weight: 750 !important;
+    font-size: 15px !important;
+    
+}
+
 .des{
-    animation: des 600ms 1000ms forwards;
+    animation: des 500ms 1200ms forwards;
     opacity: 0;
 }
 
+
 @keyframes des {
     from{
-         transform: translateX(40px);
+         transform: translateX(30px);
          
          /* transform: scaleY(1.5); */
     }
@@ -118,7 +160,7 @@
 }
 
 .hero-bottom{
-    width: 60%;
+    width: 70%;
     
     span{
         font-family: "Redacted Script", cursive;
@@ -132,9 +174,9 @@
     opacity: 0;
     font-family: "Josephin Sans ",sans-serif;
         font-style: italic;
-        font-weight: 100;
-        color: #797979;
-        font-size: 16px;
+        font-weight: 200;
+        color: #aaaaaa;
+        font-size: 18px;
 
 }
 @keyframes hero-btm {
@@ -166,7 +208,6 @@
         line-height: 65px;
     }
     .hero{
-        /* background-color: red; */
         height: 60vh;
         width: 90%;
         margin-top: 30px;
@@ -179,9 +220,7 @@
      
         width: max-content;
     }
-    .react{
-        font-size: 29px;
-    }
+    
     .hero-bottom{
         width: 100%;
         /* background-color: red; */
@@ -194,6 +233,16 @@
         justify-content: space-around;
         /* background-color: red; */
         width: 100%;
+    }
+    .dev{
+        gap: 20px;
+        /* align-self: flex-end; */
+    }
+    .tech{
+        font-size: 15px;
+        line-height: 14px;
+        align-self: flex-end;
+        font-weight: 700;
     }
     
 }

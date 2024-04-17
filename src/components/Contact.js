@@ -1,31 +1,58 @@
 import React, { useState } from "react";
 import "./contact.css";
-import { ArrowRightOutlined } from "@ant-design/icons";
+import {
+  ArrowRightOutlined,
+  CheckCircleFilled,
+  CheckOutlined,
+  CloseCircleFilled,
+  CrownFilled,
+} from "@ant-design/icons";
 function Contact() {
   const [user, setuser] = useState({ name: "", email: "", project: "" });
+  const [saved, setSaved] = useState(false);
+  const [err, setErr] = useState(null);
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     console.log(name, value);
     setuser({ ...user, [name]: value });
   };
+  const sendToBackend = async () => {
+    console.log("hello");
+
+    if (user.email === "" || user.name == "" || user.project == "") {
+      setErr("please fill all field,then submit");
+      setTimeout(() => {
+        setErr(null);
+      }, 2000);
+    } else {
+      try {
+        const req = await fetch("http://localhost:9090/client", {
+          method: "POST",
+          headers: {
+            "content-type": "application/json",
+          },
+          body: JSON.stringify(user),
+        });
+        if (req.status === 200) {
+          setSaved(true);
+          console.log("data saved");
+          setuser({ name: "", email: "", project: "" });
+          setTimeout(() => {
+            setSaved(false);
+          }, 3000);
+        } else {
+          console.log("data not saved");
+        }
+      } catch (e) {
+        console.log(e);
+      }
+    }
+  };
   return (
     <div id="contact" className="contact">
       <h1 className="get">Contact</h1>
-      <div className="contact-top">
-        <div className="name">
-          <h4>Yaseen</h4>
-          <h4>Ahmed</h4>
-        </div>
 
-        <div className="social">
-          <h3>Socials</h3>
-          <div className="social-items">
-            <span>LinkedIn</span>
-            <span>Github</span>
-            <span>Gmail</span>
-          </div>
-        </div>
-      </div>
       <div className="connect">
         <div className="connect-left">
           <div className="name-input">
@@ -63,19 +90,45 @@ function Contact() {
           </div>
         </div>
         <div className="connect-right">
-          <div className="text">{`hey my name is ${
-            user.name ? user.name : "X"
-          }. I have a project in mind lets work on it... ${
-            user.email ? `${user.email}. ` : "x@example.com. "
-          }${user.project ? user.project : " project overview..."}`}</div>
-          <button>Send message</button>
-        </div>
-      </div>
-      <div className="contact-wrap">
-        <h5>Starting a new Project ?</h5>
-        <div className="lets-talk">
-          <h4>Let's talk then</h4>
-          <ArrowRightOutlined />
+          <div className="text">
+            {saved ? (
+              <div className="saved">
+                <CheckCircleFilled className="conn-tick" />
+                <h1> Message sent to Yaseen Ahmed.</h1>
+                <h1>Please wait for response</h1>
+              </div>
+            ) : (
+              <>
+                {" "}
+                <div className="box-name">{`Hey, im ${
+                  user.name ? user.name : "X"
+                }`}</div>
+                <div className="box-project">{`
+              ${user.project ? user.project : "Project Overview"}`}</div>
+                {user.email ? (
+                  <p className="email-contact">{user.email}</p>
+                ) : (
+                  <p className="email-contact">youremail@example.com</p>
+                )}
+              </>
+            )}
+          </div>
+          {/* <button onClick={sendToBackend}   >
+            {err ? (
+              <div className="err-conn">{err}</div>
+            ) : (
+              <ArrowRightOutlined />
+            )} */}
+          {/* </button> */}
+          {err ? (
+            <button className="send-msg-err">
+              {err} <CloseCircleFilled />
+            </button>
+          ) : (
+            <button onClick={sendToBackend} className="send-msg-btn">
+              <ArrowRightOutlined />
+            </button>
+          )}
         </div>
       </div>
     </div>

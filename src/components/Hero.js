@@ -24,20 +24,23 @@ function Hero() {
     }, 1000);
     return () => clearInterval(clear);
   }, [idx]);
-  console.log(showTech);
   return (
     <div id="hero" className="hero">
       <div className="hero-1">
         <div className="hero-top">
           <span className="hero-text web">Web</span>
-          <span className="hero-text dev">Developer,</span>
+          <div className="hero-text dev ">
+            Developer, <span className="tech">({showTech})</span>
+          </div>
           <span className="hero-text des">Designer.</span>
         </div>
         <div className="hero-bottom">
           <p className="hero-bottom-text">
-            "Currently located in Hyderabad, India, I develop interactive
-            websites and provide complete solutions for those looking to take
-            their businesses online."
+            "Currently located in Hyderabad, India, I am a{" "}
+            <span className="full">full stack developer </span>
+            specializing in developing interactive websites and providing
+            complete solutions for those looking to take their businesses
+            online."
           </p>
           <span className="lorem">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde saepe
@@ -47,9 +50,9 @@ function Hero() {
         </div>
       </div>
 
-      <div className="hero-2">
+      {/* <div className="hero-2">
         <h1 className="react">({showTech})</h1>
-      </div>
+      </div> */}
     </div>
   );
 }

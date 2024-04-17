@@ -13,6 +13,7 @@
     z-index: 2;
     opacity: 0;
     animation: header 700ms forwards;
+    /* position: relative; */
 
 }
 @keyframes header {
@@ -38,7 +39,7 @@
     /* border: 1px solid white; */
     display: flex;
     flex-direction: column;
-    padding: 10px;
+    padding: 9px;
     font-family: "josephin Sans",sans-serif;
     
 
@@ -48,6 +49,7 @@
     padding:  5px;
     /* border: 1px solid white; */
     font-family: "Istok Web", sans-serif;
+    /* background-color: red; */
 }
 .nav-div::-webkit-scrollbar{
     display: none;
@@ -83,46 +85,266 @@
     text-decoration: none !important;
 }
 .third-header{
-    padding: 9px 30px;
-    border-radius: 25px;
-    border: 1px solid white;
-    text-align: end;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 10px;
-    font-family: "Istok Web", sans-serif;
+    padding: 2px 10px;
+    /* border-radius: 25px; */
+    /* border-bottom: 1px solid white; */
+    font-size: 30px;
+    /* background-color: gray; */
     cursor: pointer;
-    font-weight: 500;
-    letter-spacing: .5px;
+    font-weight: 700;
+    
+    z-index: 90;
 
     
 }
 
+.overflow{
+    overflow-y: hidden;
+}
 
 
-.green{
-    background-color: #5FFF8B;
-    width: 15px;
-    height: 16px;
+.arrow1{
+    animation: arrow 400ms 600ms forwards;
+    opacity: 0;
+    background-color: rgb(129, 131, 211);
     border-radius: 50%;
+    padding: 12px;
 
 }
+#white-arrow{
+    animation: blackarrow 300ms 200ms forwards;
+    margin-right: 20px;
+    transition: 200ms all;
+}
+@keyframes blackarrow {
+    to{
+        color: #000;
+        opacity: 1;
+        transform: rotate(-45deg);
+        background-color: rgb(97, 98, 186);;
+    }
+    
+}
+#black-arrow{
+    color:#000
+
+    
+}
+@keyframes arrow {
+    to{
+        opacity: 1;
+        transform: rotate(135deg);
+    }
+    
+}
+.quick-access{
+    width: 0;
+    min-height: 0;
+    background-color:rgb(129, 131, 211);
+    position: fixed;
+    top: 0;
+   left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 9;
+    animation: quickmenu 400ms  forwards;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    gap: 70px;
+    
+}
+@keyframes quickmenu {
+   from{
+    left: 100%;
+   }
+    to{
+        left: 0;
+        width: 100vw;
+        min-height: 100vh;
+    }
+    
+}
+.close-quick{
+    display: none;
+}
+
+.quick-access-top{
+    align-self: first flex-end;
+    margin-top: 8%;
+    animation: quick 200ms 650ms forwards;
+    opacity: 0;
+    display: flex;
+    flex-direction: column;
+    /* background-color: red; */
+    align-items: flex-end;
+   
+    button{
+        width: 200px;
+        height: 55px;
+        border: none;
+        font-family: "Istok web "sans-serif;
+        font-size: 24px;
+        border-radius: 33px;
+        font-weight: bold;
+       
+        cursor: pointer;
+        background-color: #595BB1;
+        color: white;
+        transition: 500ms all
+       
+    };
+    button:hover{
+        color: #595BB1;
+        background-color: #C5C6EA;
+
+        
+    }
+    
+}
+@keyframes quick {
+    from{
+        transform: translateX(40px);
+    }
+    to{
+        opacity: 1;
+    }
+}
+.quick-projects{
+    animation: quick-project 400ms 890ms forwards;
+    opacity: 0;    
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    h1{
+        opacity: 0.7;
+    }
+    a{
+        text-decoration: none;
+        font-size: 20px;
+
+    }
+}
+@keyframes quick-project {
+    to{
+        opacity: 1;
+    }
+}  
+.location{
+    position: absolute;
+    bottom: 10px;
+    font-size: 24px;
+    color: #ffffff;
+    right: 10px;
+    font-weight: 100;
+    display: flex;
+    flex-direction: column;  
+    align-items: flex-end;
+
+    
+    font-family: "josephin sans",sans-serif;
+    span{
+        font-size: 12px;
+    }
+    opacity: 0;
+    animation: location 200ms 70ms forwards;
+}
+@keyframes location {
+    to{
+        opacity: .3;
+    }
+    
+}
+.quick-bottom{
+    /* background-color: red; */
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+    opacity: 0;
+    animation: quick-bottom 400ms 600ms forwards;
+    
+}
+@keyframes quick-bottom {
+    to{
+        opacity: 1;
+    }
+}
+.available{
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    font-family: "Josephin sans",sans-serif;
+    
+    
+    h2{
+        font-weight: 500;
+        font-size: 23px;
+        margin-bottom: 10px;
+    }
+    align-items: flex-start;
+    button{
+        
+        border: none;
+        cursor: pointer;
+        border-radius: 25px;
+        font-size: 20px;
+        padding: 10px 25px;
+        font-weight: 500;
+        color: #000;
+    }
+}
+.links{
+    align-self: flex-end;
+    
+    margin-top: 90px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    font-size: 20px;
+    flex-wrap: wrap;
+    gap: 2px;
+    
+    a{
+        font-family: "Inter",sans-serif;
+        color: white ;
+        text-decoration: none;
+        opacity: .6;
+    }
+    a:hover{
+        opacity: 1;
+    }
+}
+
+
+/* /
+
+/
+/
+/
+// */
+
 
 @media (max-width:750px) {
     .third-header{
         font-size: 12px;
         word-wrap: keep-all;
-        padding:  10px;
+        /* padding:  10px; */
     }
     
 }
-@media (max-width:600px){
+@media (max-width:440px){
     .header{
         /* position: static; */
-        height: 50px;
-        padding:  25px 10px;
+        height: 60px;
+        padding:  29px 10px;
         /* margin-top: .5px; */
+        align-items: center;
+        /* justify-content: center; */
+        /* background-color: red; */
+    }
+    #white-arrow{
+        margin: 0;
     }
     .sec-header{
         position: fixed;
@@ -130,7 +352,7 @@
         max-width: 430px;
         top: 91dvh;
        display: flex;
-       transition: all 150ms ease-in-out;
+       transition: all 80ms ease-in-out;
         align-items: center;
         justify-content: center;
         left:50%;
@@ -148,9 +370,17 @@
         }
         
     }
+    .first-header{
+        align-self: center;
+        margin-top: 7px;
+        /* background-color: blue; */
+        overflow: hidden;
+        
+
+    }
     
     .nav-div{
-        width: 970%;
+        width: 97%;
         max-width: 390px;
         justify-content: space-around;
         background-color: #fff;
@@ -169,17 +399,25 @@
     .third-header{
         width: max-content;
         /* background-color: red; */
-        gap: 10px;
+        gap: 6px;
         word-wrap: keep-all;
         padding: 9px 10px;
         justify-content: center;
-        font-size: 10px;
+        font-size: 16px;
     }
     .green{
         width: 10px ;
         height: 10px;
     }
+    .arrow1{
+        font-size: 20px;
+        font-weight: 700;
+    }
+    .quick-access-top{
+        margin-top: 40%;
+    }
 }
+
 @media (max-width:350px){
     .nav-div{
         justify-content: center;
