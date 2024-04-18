@@ -258,10 +258,13 @@
 
 .box-name {
     font-size: 34px;
+    margin-top: 20px;
 }
 
 .box-project {
-    font-size: 28px;
+    font-size: 20px;
+    word-wrap: break-word;
+    
 }
 .saved{
     width: max-content;
@@ -367,8 +370,9 @@
     }
 
     .email-contact{
-        bottom: 7%;
+        top: 90%;
         right: 10px;
+        font-size: 18px
     }
     .text {
         width: 85vw;

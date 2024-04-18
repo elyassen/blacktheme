@@ -73,7 +73,7 @@
 
 
 .web{
-    animation: web 500ms 500ms forwards;
+    animation: web 500ms 800ms forwards;
     opacity: 0;
 }
 
@@ -87,7 +87,7 @@
     
 }
 .dev{
-    animation: dev 500ms 800ms forwards;
+    animation: dev 800ms 900ms forwards;
     opacity: 0;
     display: flex;
     align-items: flex-start;
@@ -243,6 +243,9 @@
         line-height: 14px;
         align-self: flex-end;
         font-weight: 700;
+    }
+    .lorem{
+        display: none;
     }
     
 }

@@ -3,7 +3,7 @@ import "./red.css";
 function Red() {
   return (
     <div className="red">
-      <h1 className="full-red">Full Stack Developer</h1>
+      <p className="full-red">Loading</p>
       <div className="loading">
         <div className="progress"></div>
       </div>

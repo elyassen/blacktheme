@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import "./header.css";
 import { ArrowRightOutlined } from "@ant-design/icons";
-
 function Header() {
   const [quick, setQuick] = useState(false);
   const quickfun = () => {
@@ -40,7 +39,11 @@ function Header() {
 
       <div className={`${quick ? "quick-access" : "close-quick"}`}>
         <div className="quick-access-top">
-          <button>Resume</button>
+          <button>
+            <a target="_blank" href={require("../static/YaseenResume.pdf")}>
+              Resume
+            </a>
+          </button>
         </div>
 
         <div className="quick-bottom">
@@ -55,11 +58,11 @@ function Header() {
             >
               @LinkedIn
             </a>
-            <a href="" target="_blank">
+            <a href="https://github.com/elyassen" target="_blank">
               @Github
             </a>
             <a target="_blank" href="mailto:yaseenseen9@gmail.com">
-              @Github,
+              @Gmail,
             </a>
             <a target="_blank" href="https://www.instagram.com/yassenahm3d/">
               @Instagram.
